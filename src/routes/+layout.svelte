@@ -73,7 +73,7 @@ text-foreground"
 		<Navigation />
 	</div>
 
-	<main class="flex-1" in:fade>
+	<main class="flex-1" transition:fade>
 		{@render children()}
 	</main>
 
