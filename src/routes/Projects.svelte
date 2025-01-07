@@ -6,11 +6,14 @@
 	import Github from "lucide-svelte/icons/github"
 	import ExternalLink from "lucide-svelte/icons/external-link"
 
+	import ntcImg from '$lib/assets/NovaTechClub.png?enhanced'
+	import jurisImg from '$lib/assets/jurisbase.png?enhanced'
+
 	const projects = [
 		{
 			title: "Nova Tech Club Website",
 			description: "A modern web application built with Svelte and TypeScript.",
-			image: "/Nova Tech Club.png",
+			image: ntcImg,
 			tags: ["Svelte", "Pocketbase", "Tailwind"],
 			github: "https://github.com/supra1302/nova-tech-club-website",
 			demo: "https://novatechclub.pages.dev/"
@@ -18,7 +21,7 @@
 		{
 			title: "Case-law Search Platform",
 			description: "Full-stack application to enable case-law search.",
-			image: "/jurisbase.png",
+			image: jurisImg,
 			tags: ["SvelteKit", "AI", "Drizzle"],
 			github: "",
 			demo: "https://jurisbase.dcatalim.com"
@@ -36,7 +39,7 @@
 			<Card.Root>
 				<Card.Header>
 					<div class="aspect-video w-full overflow-hidden rounded-lg">
-						<img
+						<enhanced:img
 							src={project.image}
 							alt={project.title}
 							class="h-full w-full object-cover object-top"
