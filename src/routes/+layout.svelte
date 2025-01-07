@@ -10,11 +10,31 @@
 
 	import Menu from "lucide-svelte/icons/menu"
 	import X from "lucide-svelte/icons/x"
+
+	import { page } from "$app/state"
+	import { config } from '$lib/config';
+
 	let { children } = $props()
 
 	// Mobile menu state
 	let isMobileMenuOpen: boolean = $state(false)
 </script>
+
+<svelte:head>
+	<title>{page.data.title} | {config.title}</title>
+	<meta name="description" content={page.data.description ?? config.description} />
+	<meta name="keywords" content={page.data.keywords ?? config.keywords} />
+
+	<meta property="og:url" content={page.url.toString()} />
+	<meta property="og:type" content={page.data.type ?? "website"} />
+	<meta property="og:title" content={`${page.data.title} | ${config.title}`} />
+	<meta property="og:description" content={page.data.description ?? config.description} />
+	<meta property="og:image" content={config.image} />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content={config.title} />
+	
+
+</svelte:head>
 
 <Toaster position="top-center" />
 

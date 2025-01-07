@@ -7,7 +7,12 @@ export const load = (async ({ params }) => {
 		const post = await import(`../../../posts/${slug}.svx`)
 		return {
 			Content: post?.default,
-			meta: { ...post?.metadata, slug }
+			meta: { ...post?.metadata, slug },
+			title: post?.metadata?.title,
+			description: post?.metadata?.description,
+			keywords: post?.metadata?.categories,
+			type: 'article'
+			
 		}
 	} catch (err) {
 		console.error("Error loading the post:", err)

@@ -1,6 +1,7 @@
 import type { Post } from "$lib/types.js"
+import { config } from '$lib/config';
 
-const site = "https://dcatalim.com" // change this to reflect your domain
+const site = `https://${config.domain}` // change this to reflect your domain
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ url, fetch }) {
