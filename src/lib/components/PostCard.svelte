@@ -33,6 +33,6 @@
 		</div>
 	</Card.Content>
 	<Card.Footer>
-		<Button variant="outline" class="w-full" href={`/posts/${post?.slug}`}>Read More</Button>
+		<Button variant="outline" class="w-full" href={`/posts/${post?.slug}`} >Read More</Button>
 	</Card.Footer>
 </Card.Root>
