@@ -14,7 +14,7 @@
 </script>
 
 {#if showGotoTop}
-	<Button variant="outline" size="icon" onclick={gotoTop} class="fixed bottom-4 right-4" aria-label='Go to top'>
+	<Button variant="outline" size="icon" onclick={gotoTop} class="fixed bottom-4 right-4  z-50"  aria-label='Go to top'>
 		<ChevronUp class="size-4 " />
 	</Button>
 {/if}
