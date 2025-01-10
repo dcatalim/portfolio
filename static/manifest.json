@@ -2,7 +2,7 @@
     "short_name": "My Portfolio",
 	"name": "David Catalim Portfolio",
 	"description": "Welcome to my personal portfolio",
-	"display": "minimal-ui",
+	"display": "standalone",
 	"start_url": "/",
     "id": "/",
     "background_color": "#1e293b",
