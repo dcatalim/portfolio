@@ -28,3 +28,6 @@ export const load = (async ({ params }) => {
 		}
 	}
 }) satisfies PageLoad
+
+
+export const prerender = false
