@@ -46,7 +46,7 @@
 		{#if filtered.length > 0}
 			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{#each filtered as post}
-					<div in:fade>
+					<div in:fade class="overflow-hidden">
 						<PostCard {post} />
 					</div>
 				{/each}

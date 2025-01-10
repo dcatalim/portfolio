@@ -2,10 +2,10 @@ import type { Post } from "$lib/types.js"
 import { config } from '$lib/config';
 
 const site = `https://${config.domain}` // change this to reflect your domain
+const pages: string[] = ["contact", "posts"] // populate this with all the slugs you wish to include
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ url, fetch }) {
-	const pages: string[] = ["contact", "posts"] // populate this with all the slugs you wish to include
 
 	const res = await fetch("api/posts")
 	const posts: Post[] = await res.json()

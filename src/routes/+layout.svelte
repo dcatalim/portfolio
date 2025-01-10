@@ -54,6 +54,7 @@ text-foreground"
 			{:else}
 				<Menu class="h-5 w-5" />
 			{/if}
+			<span class="sr-only">Menu Button</span>
 		</Button>
 	</div>
 

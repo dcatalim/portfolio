@@ -12,7 +12,9 @@
 
 <Card.Root>
 	<Card.Header>
-		<Card.Title class="line-clamp-2 text-xl">{post.title}</Card.Title>
+		<Card.Title class="line-clamp-2 text-xl">
+			<h2>{post.title}</h2>
+			</Card.Title>
 		<Card.Description class="flex items-center gap-4 text-sm">
 			<span class="flex items-center gap-1">
 				<Calendar class="h-4 w-4" />
@@ -33,6 +35,6 @@
 		</div>
 	</Card.Content>
 	<Card.Footer>
-		<Button variant="outline" class="w-full" href={`/posts/${post?.slug}`} >Read More</Button>
+		<Button variant="outline" class="w-full  overflow-hidden" href={`/posts/${post?.slug}`} >Read More</Button>
 	</Card.Footer>
 </Card.Root>

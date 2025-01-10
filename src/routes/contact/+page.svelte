@@ -90,7 +90,11 @@
 							<div>
 								<Card.Description>{info.title}</Card.Description>
 
-								<Card.Title class="text-lg">{info.description}</Card.Title>
+								<Card.Title class="text-lg">
+									<a href="mailto:hello@dcatalim.com">
+										{info.description}
+									</a></Card.Title
+								>
 							</div>
 						</div>
 					</Card.Content>
