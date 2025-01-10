@@ -5,7 +5,7 @@ const site = `https://${config.domain}` // change this to reflect your domain
 const pages: string[] = ["contact", "posts"] // populate this with all the slugs you wish to include
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET({ url, fetch }) {
+export async function GET({ fetch }) {
 
 	const res = await fetch("api/posts")
 	const posts: Post[] = await res.json()
