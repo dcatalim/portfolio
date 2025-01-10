@@ -7,12 +7,12 @@
 <section class="container mx-auto flex min-h-[calc(100vh-80px)] items-center px-4 py-20">
 	<div class="mx-auto max-w-3xl text-center">
 		<h1 class="mb-6 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl">
-			Crafting Digital Experiences with
-			<span class="text-primary">Modern Technologies</span>
+			Welcome to my portfolio
+			<!-- <span class="text-primary">Modern Technologies</span> -->
 		</h1>
 		<p class="mb-8 text-lg text-muted-foreground md:text-xl">
-			Full-stack developer specializing in building exceptional digital experiences with modern web
-			technologies.
+			My name is <span class="text-primary">David Catalim</span> and I develop websites with multiple
+			technologies, you can find more about my projects below:
 		</p>
 		<div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
 			<Button size="lg" href="#projects">

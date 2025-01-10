@@ -9,7 +9,7 @@
 		{
 			icon: Code,
 			title: "Frontend Development",
-			description: "Building responsive and interactive user interfaces with modern frameworks."
+			description: "Building responsive and interactive user interfaces."
 		},
 		{
 			icon: Server,
@@ -25,7 +25,7 @@
 </script>
 
 <section id="about" class="container mx-auto px-4 py-20">
-	<h2 class="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl">About Me</h2>
+	<h2 class="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl">My Skills</h2>
 
 	<div class="mb-16 grid gap-8 md:grid-cols-3">
 		{#each skills as skill}

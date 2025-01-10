@@ -52,7 +52,7 @@
 				{/each}
 			</div>
 		{:else}
-			<p class="text-center text-muted-foreground">No posts found</p>
+			<p class="text-center text-muted-foreground">Hey, I haven't released a post yet. Check back later!</p>
 		{/if}
 	{/await}
 </section>
