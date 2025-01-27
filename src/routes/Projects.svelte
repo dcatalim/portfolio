@@ -29,7 +29,7 @@
 				"A modern web application that allows academic publications and sharing projects & events.",
 			image: NovaTechClub,
 			tags: ["Svelte", "Pocketbase", "Tailwind"],
-			github: "https://github.com/supra1302/nova-tech-club-website",
+			github: "https://github.com/dcatalim/novatechclub",
 			demo: "https://novatechclub.pages.dev"
 		},
 		{

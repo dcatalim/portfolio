@@ -4,7 +4,7 @@
 	import Mail from "lucide-svelte/icons/mail"
 
 	const socialLinks = [
-		{ icon: Github, href: "https://github.com/supra1302", label: "GitHub" },
+		{ icon: Github, href: "https://github.com/dcatalim", label: "GitHub" },
 		{ icon: Linkedin, href: "https://www.linkedin.com/in/davidcatalim/", label: "LinkedIn" },
 		{ icon: Mail, href: "mailto:hello@dcatalim.com", label: "Email" }
 	]
