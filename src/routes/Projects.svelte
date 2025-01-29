@@ -9,12 +9,21 @@
 
 	import NovaTechClub from "$lib/assets/NovaTechClub.png?enhanced"
 	import Jurisbase from "$lib/assets/Jurisbase.png?enhanced"
+	import TeamOnSync from "$lib/assets/teamonsync.png?enhanced"
 	import BrunosPizzeria from "$lib/assets/BrunosPizzeria.png?enhanced"
 	import GroupVarietySolutions from "$lib/assets/GroupVarietySolutions.png?enhanced"
 	import Infoteste from "$lib/assets/Infoteste.png?enhanced"
 	import LivrariadaLapa from "$lib/assets/LivrariadaLapa.png?enhanced"
 
 	const projects = [
+		{
+			title: "TeamOnSync",
+			description: "Webapp to manage your team on the go.",
+			image: TeamOnSync,
+			tags: ["SvelteKit", "Pocketbase", "Shadcn"],
+			github: "",
+			demo: "https://teamonsync.dcatalim.com"
+		},
 		{
 			title: "Jurisbase",
 			description: "Full-stack application to enable case-law search with Artificial Intelligence.",
@@ -68,18 +77,19 @@
 </script>
 
 <section id="projects" class="container mx-auto px-4 py-20">
-	<h2 class="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl">
-	My Projects
-	</h2>
+	<h2 class="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl">My Projects</h2>
 
 	<div class="grid gap-8 md:grid-cols-2">
 		{#each projects as project}
 			<Card.Root>
 				<Card.Header>
 					<ScrollArea class="aspect-video w-full overflow-hidden rounded-lg">
-						<a href={project.demo} aria-label={project.title}
-						target="_blank"
-						rel="noreferrer noopener">
+						<a
+							href={project.demo}
+							aria-label={project.title}
+							target="_blank"
+							rel="noreferrer noopener"
+						>
 							<enhanced:img
 								src={project.image}
 								alt={project.title}
