@@ -1,4 +1,5 @@
 <script>
+	import Typewriter from "$lib/components/Typewriter.svelte"
 	import { Button } from "$lib/components/ui/button"
 
 	import ArrowRight from "lucide-svelte/icons/arrow-right"
@@ -7,7 +8,7 @@
 <section class="container mx-auto flex min-h-[calc(100vh-80px)] items-center px-4 py-20">
 	<div class="mx-auto max-w-3xl text-center">
 		<h1 class="mb-6 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl">
-			Welcome to my portfolio
+			<Typewriter>Welcome to my portfolio</Typewriter>
 			<!-- <span class="text-primary">Modern Technologies</span> -->
 		</h1>
 		<p class="mb-8 text-lg text-muted-foreground md:text-xl">
