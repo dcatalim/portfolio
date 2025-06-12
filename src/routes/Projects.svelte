@@ -8,7 +8,7 @@
 	import ExternalLink from "lucide-svelte/icons/external-link"
 
 	import NovaTechClub from "$lib/assets/NovaTechClub.png?enhanced"
-	import Jurisbase from "$lib/assets/Jurisbase.png?enhanced"
+	import Lusolex from "$lib/assets/Lusolex.png?enhanced"
 	import TeamOnSync from "$lib/assets/teamonsync.png?enhanced"
 	import BrunosPizzeria from "$lib/assets/BrunosPizzeria.png?enhanced"
 	import GroupVarietySolutions from "$lib/assets/GroupVarietySolutions.png?enhanced"
@@ -17,6 +17,15 @@
 
 	const projects = [
 		{
+			title: "Lusolex",
+			description: "Full-stack application to enable case-law search with Artificial Intelligence.",
+			image: Lusolex,
+			tags: ["SvelteKit", "AI", "Vector DB"],
+			github: "",
+			demo: "https://lusolex.com"
+		},
+
+		{
 			title: "TeamOnSync",
 			description: "Webapp to manage your team on the go.",
 			image: TeamOnSync,
@@ -24,14 +33,7 @@
 			github: "",
 			demo: "https://teamonsync.dcatalim.com"
 		},
-		{
-			title: "Jurisbase",
-			description: "Full-stack application to enable case-law search with Artificial Intelligence.",
-			image: Jurisbase,
-			tags: ["SvelteKit", "AI", "Drizzle"],
-			github: "",
-			demo: "https://jurisbase.dcatalim.com"
-		},
+		
 		{
 			title: "Nova Tech Club",
 			description:
