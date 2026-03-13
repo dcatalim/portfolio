@@ -19,7 +19,9 @@
 	const projects = [
 		{
 			title: "LLM Research",
-			description: "A research project focused on evaluating the capabilities of Large Language Models in various tasks.",
+			description:
+				"A research project focused on evaluating the capabilities of Large Language Models in various tasks.",
+			date: "Oct. 2025",
 			image: LLMResearch,
 			tags: ["SvelteKit", "AI SDK", "Pocketbase"],
 			github: "https://github.com/dcatalim/llm-research",
@@ -29,6 +31,7 @@
 		{
 			title: "Lusolex",
 			description: "Full-stack application to enable case-law search with Artificial Intelligence.",
+			date: "Jun. 2025",
 			image: Lusolex,
 			tags: ["SvelteKit", "AI SDK", "Vector DB"],
 			github: "",
@@ -38,6 +41,7 @@
 		{
 			title: "TeamOnSync",
 			description: "Webapp to manage your team on the go.",
+			date: "Jan. 2025",
 			image: TeamOnSync,
 			tags: ["SvelteKit", "Pocketbase", "Shadcn"],
 			github: "https://github.com/dcatalim/teamonsync",
@@ -48,6 +52,7 @@
 			title: "Nova Tech Club",
 			description:
 				"A modern web application that allows academic publications and sharing projects & events.",
+			date: "Nov. 2024",
 			image: NovaTechClub,
 			tags: ["Svelte", "Pocketbase", "Tailwind"],
 			github: "https://github.com/dcatalim/novatechclub",
@@ -56,6 +61,7 @@
 		{
 			title: "Group Variety Solutions",
 			description: "Institutional website for a services firm.",
+			date: "Jun. 2024",
 			image: GroupVarietySolutions,
 			tags: ["HTML", "CSS", "Bootstrap"],
 			github: "",
@@ -64,26 +70,29 @@
 		{
 			title: "Livraria da Lapa",
 			description: "Full-stack E-commerce store for a bookshop.",
+			date: "Feb. 2024",
 			image: LivrariadaLapa,
 			tags: ["HTML", "CSS", "Prestashop"],
 			github: "",
 			demo: "https://livrariadalapa.com"
 		},
 		{
-			title: "Infoteste",
-			description: "Institutional website for a psychology evaluation firm.",
-			image: Infoteste,
-			tags: ["HTML", "CSS", "Bootstrap"],
-			github: "",
-			demo: "https://preview.infoteste.pt"
-		},
-		{
 			title: "Brunos Pizzeria",
 			description: "E-commerce store for a pizzeria with online orders.",
+			date: "Dez. 2023",
 			image: BrunosPizzeria,
 			tags: ["Wordpress", "Woocommerce"],
 			github: "",
 			demo: "https://brunospizzeria.ch"
+		},
+		{
+			title: "Infoteste",
+			description: "Institutional website for a psychology evaluation firm.",
+			date: "Jun. 2023",
+			image: Infoteste,
+			tags: ["HTML", "CSS", "Bootstrap"],
+			github: "",
+			demo: "https://preview.infoteste.pt"
 		}
 	]
 </script>
@@ -96,18 +105,11 @@
 			<Card.Root>
 				<Card.Header>
 					<ScrollArea class="aspect-video w-full overflow-hidden rounded-lg">
-						<a
-							href={project.demo}
-							aria-label={project.title}
-							target="_blank"
-							rel="noreferrer noopener"
-						>
-							<enhanced:img
-								src={project.image}
-								alt={project.title}
-								class="h-full w-full object-cover object-top"
-							/>
-						</a>
+						<enhanced:img
+							src={project.image}
+							alt={project.title}
+							class="h-full w-full object-cover object-top"
+						/>
 					</ScrollArea>
 
 					<!-- <div class="aspect-video w-full overflow-hidden rounded-lg">
@@ -117,7 +119,10 @@
 							class="h-full w-full object-cover object-top"
 						/>
 					</div> -->
-					<Card.Title class="pt-2">{project.title}</Card.Title>
+					<div class="flex w-full items-baseline justify-between">
+						<Card.Title class="pt-2">{project.title}</Card.Title>
+						<Badge variant="outline">{project?.date}</Badge>
+					</div>
 				</Card.Header>
 				<Card.Content>
 					<p class="mb-4 text-muted-foreground">{project.description}</p>
