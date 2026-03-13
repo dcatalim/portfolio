@@ -1,38 +1,66 @@
-# sv
+# David Catalim Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Personal portfolio website built with SvelteKit, TypeScript, Tailwind CSS, and mdsvex.
 
-## Creating a project
+The site includes:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Home page sections for Hero, About, Projects, and recent Posts
+- A blog system powered by `.svx` files in `src/posts`
+- Dynamic post pages at `/posts/[slug]`
+- RSS feed at `/rss.xml`
+- Sitemap at `/sitemap.xml`
+- Contact page with Web3Forms integration
+
+## Tech Stack
+
+- SvelteKit + Svelte 5
+- TypeScript
+- Tailwind CSS
+- mdsvex
+- lucide-svelte
+- svelte-sonner
+
+## Project Structure
+
+- `src/routes/+page.svelte`: Home page composition
+- `src/routes/posts`: Blog list and post routes
+- `src/routes/api/posts/+server.ts`: Loads and returns published posts from `src/posts/*.svx`
+- `src/routes/rss.xml/+server.ts`: RSS feed generation
+- `src/routes/sitemap.xml/+server.ts`: Sitemap generation
+- `src/routes/contact/+page.svelte`: Contact form UI and submit logic
+- `src/lib/config.ts`: Site metadata (title, description, domain)
+
+## Getting Started
+
+### 1. Install dependencies
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+pnpm install
 ```
 
-## Developing
+### 2. Configure environment variables
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Create a `.env` file in the project root:
+
+```env
+PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+```
+
+This key is used by the contact form to submit messages through Web3Forms.
+
+### 3. Run development server
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm dev
 ```
 
-## Building
-
-To create a production version of your app:
+### 4. Build and preview
 
 ```bash
-npm run build
+pnpm build
+pnpm preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Author
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+David Catalim

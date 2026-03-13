@@ -14,13 +14,23 @@
 	import GroupVarietySolutions from "$lib/assets/GroupVarietySolutions.png?enhanced"
 	import Infoteste from "$lib/assets/Infoteste.png?enhanced"
 	import LivrariadaLapa from "$lib/assets/LivrariadaLapa.png?enhanced"
+	import LLMResearch from "$lib/assets/LLMResearch.png?enhanced"
 
 	const projects = [
+		{
+			title: "LLM Research",
+			description: "A research project focused on evaluating the capabilities of Large Language Models in various tasks.",
+			image: LLMResearch,
+			tags: ["SvelteKit", "AI SDK", "Pocketbase"],
+			github: "https://github.com/dcatalim/llm-research",
+			demo: ""
+		},
+
 		{
 			title: "Lusolex",
 			description: "Full-stack application to enable case-law search with Artificial Intelligence.",
 			image: Lusolex,
-			tags: ["SvelteKit", "AI", "Vector DB"],
+			tags: ["SvelteKit", "AI SDK", "Vector DB"],
 			github: "",
 			demo: ""
 		},
