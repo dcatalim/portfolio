@@ -5,8 +5,8 @@
 
 	const socialLinks = [
 		{ icon: Github, href: "https://github.com/dcatalim", label: "GitHub" },
-		{ icon: Linkedin, href: "https://www.linkedin.com/in/davidcatalim/", label: "LinkedIn" },
-		{ icon: Mail, href: "mailto:hello@dcatalim.com", label: "Email" }
+		{ icon: Linkedin, href: "https://www.linkedin.com/in/catalim", label: "LinkedIn" },
+		{ icon: Mail, href: "mailto:contact@dcatalim.com", label: "Email" }
 	]
 </script>
 

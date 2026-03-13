@@ -2,12 +2,14 @@
 	import Mail from "lucide-svelte/icons/mail"
 	import * as Card from "$lib/components/ui/card"
 
-	// import ArrowRight from 'lucide-svelte/icons/arrow-right';
-	// import { Button } from '$lib/components/ui/button';
-	// import { Input } from '$lib/components/ui/input';
-	// import { Label } from '$lib/components/ui/label';
-	// import { Textarea } from '$lib/components/ui/textarea';
-	// import { toast } from 'svelte-sonner';
+	import ArrowRight from "lucide-svelte/icons/arrow-right"
+	import { Button } from "$lib/components/ui/button"
+	import { Input } from "$lib/components/ui/input"
+	import { Label } from "$lib/components/ui/label"
+	import { Textarea } from "$lib/components/ui/textarea"
+	import { toast } from "svelte-sonner"
+	import { PUBLIC_WEB3FORMS_ACCESS_KEY } from "$env/static/public"
+
 	// Contact information
 	const contactInfo = [
 		// {
@@ -18,7 +20,7 @@
 		{
 			icon: Mail,
 			title: "Email",
-			description: "hello@dcatalim.com"
+			description: "contact@dcatalim.com"
 		}
 		// 	{
 		// 		icon: Phone,
@@ -27,43 +29,46 @@
 		// 	}
 	]
 
-	// // Form state
-	// let name: string = $state('');
-	// let email: string = $state('');
-	// let message: string = $state('');
+	// Form state
+	let name: string = $state("")
+	let email: string = $state("")
+	let message: string = $state("")
 
-	// let status = $state('');
-	// const handleSubmit = async (data) => {
-	// 	status = 'Submitting...';
-	// 	const formData = new FormData(data.currentTarget);
-	// 	const object = Object.fromEntries(formData);
-	// 	const json = JSON.stringify(object);
+	let status = $state("")
+	const handleSubmit = async (data: SubmitEvent & { currentTarget: HTMLFormElement }) => {
+		data.preventDefault()
 
-	// 	try {
-	// 		const response = await fetch('https://api.web3forms.com/submit', {
-	// 			method: 'POST',
-	// 			headers: {
-	// 				'Content-Type': 'application/json',
-	// 				Accept: 'application/json'
-	// 			},
-	// 			body: json
-	// 		});
-	// 		const result = await response.json();
+		status = "Submitting..."
+		const formData = new FormData(data.currentTarget)
+		const object = Object.fromEntries(formData)
+		const json = JSON.stringify(object)
 
-	// 		if (result.success) {
-	// 			console.log(result);
-	// 			status = result.message || 'Success';
-	// 			toast.success(result.message || 'Success');
-	// 		}
-	// 	} catch (err) {
-	// 		status = 'There was an error';
-	// 		toast.success(err?.message || 'There was an error');
-	// 	}
+		try {
+			const response = await fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json"
+				},
+				body: json
+			})
+			const result = await response.json()
 
-	// 	name = '';
-	// 	email = '';
-	// 	message = '';
-	// };
+			if (result.success) {
+				console.log(result)
+				status = result.message || "Success"
+				toast.success(result.message || "Success")
+
+				// Reset form fields
+				name = ""
+				email = ""
+				message = ""
+			}
+		} catch (err) {
+			status = "There was an error"
+			toast.error(err instanceof Error ? err.message : "There was an error")
+		}
+	}
 </script>
 
 <section class="container mx-auto px-4 py-16">
@@ -75,9 +80,9 @@
 		</p>
 	</div>
 
-	<div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+	<div class="mx-auto grid max-w-6xl gap-8">
 		<!-- Contact Information -->
-		<div class="col-span-2 flex flex-col space-y-6">
+		<div class="flex flex-col space-y-6">
 			{#each contactInfo as info}
 				<Card.Root>
 					<Card.Content>
@@ -91,7 +96,7 @@
 								<Card.Description>{info.title}</Card.Description>
 
 								<Card.Title class="text-lg">
-									<a href="mailto:hello@dcatalim.com">
+									<a href="mailto:contact@dcatalim.com">
 										{info.description}
 									</a></Card.Title
 								>
@@ -103,19 +108,19 @@
 		</div>
 
 		<!-- Contact Form -->
-		<!-- <Card.Root>
+		<Card.Root>
 			<Card.Content class="p-6">
 				<form class="space-y-6" onsubmit={handleSubmit}>
-
 					<div class="space-y-2">
 						<Label for="name">Name</Label>
-						<Input id="name" bind:value={name} placeholder="John Doe" required />
+						<Input id="name" name="name" bind:value={name} placeholder="John Doe" required />
 					</div>
 
 					<div class="space-y-2">
 						<Label for="email">Email</Label>
 						<Input
 							id="email"
+							name="email"
 							type="email"
 							bind:value={email}
 							placeholder="john@example.com"
@@ -127,6 +132,7 @@
 						<Label for="message">Message</Label>
 						<Textarea
 							id="message"
+							name="message"
 							bind:value={message}
 							placeholder="Your message here..."
 							class="min-h-[150px]"
@@ -134,7 +140,7 @@
 						/>
 					</div>
 
-					<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+					<input type="hidden" name="access_key" value={PUBLIC_WEB3FORMS_ACCESS_KEY} />
 
 					<Button type="submit" class="w-full">
 						Send Message
@@ -142,6 +148,6 @@
 					</Button>
 				</form>
 			</Card.Content>
-		</Card.Root> -->
+		</Card.Root>
 	</div>
 </section>

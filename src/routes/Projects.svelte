@@ -22,7 +22,7 @@
 			image: Lusolex,
 			tags: ["SvelteKit", "AI", "Vector DB"],
 			github: "",
-			demo: "https://lusolex.com"
+			demo: ""
 		},
 
 		{
@@ -30,10 +30,10 @@
 			description: "Webapp to manage your team on the go.",
 			image: TeamOnSync,
 			tags: ["SvelteKit", "Pocketbase", "Shadcn"],
-			github: "",
-			demo: "https://teamonsync.dcatalim.com"
+			github: "https://github.com/dcatalim/teamonsync",
+			demo: ""
 		},
-		
+
 		{
 			title: "Nova Tech Club",
 			description:
@@ -41,7 +41,7 @@
 			image: NovaTechClub,
 			tags: ["Svelte", "Pocketbase", "Tailwind"],
 			github: "https://github.com/dcatalim/novatechclub",
-			demo: "https://novatechclub.pages.dev"
+			demo: "https://techclubnova.com/"
 		},
 		{
 			title: "Group Variety Solutions",
@@ -65,7 +65,7 @@
 			image: Infoteste,
 			tags: ["HTML", "CSS", "Bootstrap"],
 			github: "",
-			demo: "https://Infoteste.pages.dev"
+			demo: "https://preview.infoteste.pt"
 		},
 		{
 			title: "Brunos Pizzeria",
@@ -130,10 +130,12 @@
 							Code
 						</Button>
 					{/if}
-					<Button size="sm" href={project.demo} target="_blank" rel="noreferrer noopener">
-						<ExternalLink class="mr-2 h-4 w-4" />
-						Demo
-					</Button>
+					{#if project.demo}
+						<Button size="sm" href={project.demo} target="_blank" rel="noreferrer noopener">
+							<ExternalLink class="mr-2 h-4 w-4" />
+							Demo
+						</Button>
+					{/if}
 				</Card.Footer>
 			</Card.Root>
 		{/each}

@@ -70,11 +70,11 @@ text-foreground"
 	{/if}
 
 	<!-- Desktop Navigation -->
-	<div class="hidden md:block">
+	<div class="fixed left-0 top-0 z-40 hidden w-full bg-background/80 backdrop-blur-sm md:block">
 		<Navigation />
 	</div>
 
-	<main class="flex-1" transition:fade>
+	<main class="flex-1 md:pt-24" transition:fade>
 		{@render children()}
 	</main>
 
